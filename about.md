@@ -1,18 +1,11 @@
 ---
 layout: page
-title: About
+title: About:~
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+My name is Stephen, I've worked in Cyber Security for a number of years. My roles have primarily been in DFIR and malware analysis.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I've created this blog to be able to write and share some of the interesting samples or campaigns I find in the wild, and CTFs that I have completed.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+Research and opinions expressed are solely my own and not research or opinions of my current or previous employers.
