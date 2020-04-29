@@ -30,9 +30,9 @@ $ file garden.jpg
 garden.jpg: JPEG image data, JFIF standard 1.01, resolution (DPI), density 72x72, segment length 16, baseline, precision 8, 2999x2249, frames 3
 ```
 
-We now know it's definitely a JPEG. Something I like to check in JPEG images is the header and trailer bytes. The JPEG format is one of the few formats that has 2 bytes that tell you it is the end of the file.
+We now know it's definitely a JPEG. Something I like to check in JPEG images is the header and footer bytes. The JPEG format is one of the few formats that has 2 bytes that tell you it is the end of the file.
 
-The header bytes are `FF D8` and the trailer bytes are `FF D9`, so if we open the file in a hex editor, we can look for these.
+The header bytes are `FF D8` and the footer bytes are `FF D9`, so if we open the file in a hex editor, we can look for these.
 
 ```
 $ xxd garden.jpg |less
