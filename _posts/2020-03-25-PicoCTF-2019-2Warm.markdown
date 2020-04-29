@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "PicoCTF 2019 - 2Warm"
+date:   2020-03-25 19:46:39 +1100
+categories: pico ctf picoctf
+---
+
+First of all, welcome to my blog and my first post. I wanted to start off with some older content that I have been meaning to post somewhere.
+
+PicoCTF is a great CTF for beginners all the way to experts in cyber security. It has a variety of categories for different skills such as reverse engineering, forensics, web exploitation and more.
+
+For the first post, I'm going to write up my solutions for the first few challenges. Most of the solutions will be in Python depending on the challenge.
+
+## 2Warm
+- Points: 50
+- Category: General Skills
+
+**Description/Question:**
+
+```
+Can you convert the number 42 (base 10) to binary (base 2)?
+```
+
+**Solution**
+
+A quick trick to help converting small decimal numbers (base 10) to binary (base 2) is to write out bits, bit by bit, until you have a single bit with a value larger than your decimal value.
+
+For example, if we look at the decimal values of 8 bits we can see that `42` is less than 64, but greater than 32, so we only need to focus on the first 6 bits.
+
+binary |0|0|1|1|1|1|1|1|
+value |128|64|32|16|8|4|2|1|
+
+Then we need to add 32 to the number before it, 16, and do the less and and greater than check again. So `32 + 16 = 48` 48 is higher than, so we don't use 16.
+
+binary |0|0|`1`|0|1|1|1|1|
+value |128|64|32|16|8|4|2|1|
+
+Next we try adding 8 to 32 `32 + 8 = 40`, 40 is lower than 42 so we will keep that bit.
+
+binary |0|0|`1`|0|`1`|1|1|1|
+value |128|64|32|16|8|4|2|1|
+
+Continuing on, `40 + 4 = 44` so we will turn off this bit.
+
+binary |0|0|`1`|0|`1`|0|1|1|
+value |128|64|32|16|8|4|2|1|
+
+And then finally, `40 + 2 = 42` meaning we can leave this bit on and turn the last bit off.
+
+binary |0|0|`1`|0|`1`|0|`1`|0|
+value |128|64|32|16|8|4|2|1|
+
+Our final binary number is `00101010`, shortened to `101010` because the higher value bits on the left aren't used.
+
+Wrapping our answer in the Pico tag we get: `picoCTF{101010}`
