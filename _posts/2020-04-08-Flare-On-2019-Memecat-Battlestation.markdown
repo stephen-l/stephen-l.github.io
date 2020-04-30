@@ -39,7 +39,13 @@ In the Stage1Form class there is a function called `FireButton_Click` which will
 
 ![programcode](/assets/flareon/2019/memecatbattlestation/stage1code.png)
 
-Next, Stage2Form has the same `FireButton_Click` function, but this time the if condition passes the input to the `isValidWeaponCode` function. This function will take each character in the text box and XOR it with the value "A", then if each encoded character is equal to the encoded characters in the `SequenceEqual` function, it will return true.
+Next, Stage2Form has the same `FireButton_Click` function, but this time the if condition passes the input to the `isValidWeaponCode` function. This function will take each character in the text box and XOR it (the caret symbol ^ tells us this is an XOR function) with the value "A", then if each encoded character is equal to the encoded characters in the `SequenceEqual` function, it will return true.
+
+An XOR is a bitwise operator or function that takes 2 inputs. Below is an example of 2 binary numbers being XOR'd. It can be simplified like this, if you convert 2 values to binary and align them, if each input bit is the same, the output will be 0. If each input bit is different, the output will be 1. Below we can see the first bits in input A and input B are 1, so the output is 0. Then the second bits from A and B are 1 and 0, so the output is 1.
+
+input A |0|0|1|1|
+input B |0|1|0|1|
+output |0|1|1|0|
 
 ![programcode](/assets/flareon/2019/memecatbattlestation/stage2code.png)
 
