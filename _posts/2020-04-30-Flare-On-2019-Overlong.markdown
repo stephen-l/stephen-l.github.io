@@ -35,7 +35,7 @@ We can start of at the entry to see what happens when this binary is first run.
 Ghidra's decompiled view on the right can help simplify the assembly in this function. Instantly we see that there is a call to `MessageBoxA` which takes 4 arguments.
 We can visit the Microsoft documentation for this function to get more information.
 
-![messageboxa](/assets/flareon/2019/overlong/messageboxa.png)
+![messageboxa](/assets/flareon/2019/overlong/messagebox.png)
 
 The arguments that mean something to us are the 2nd (lpText) and 3rd (lpCaption) which is the text in the Messagebox and the title. The title is a string which Ghidra has called `s_Output_00403000` and in the disassembled view it gives us that string `Output`.
 
